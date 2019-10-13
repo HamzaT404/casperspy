@@ -49,7 +49,7 @@
             <a href="<?php echo base_url()?>index.php?admin/audio">
                 <div class="tile-stats tile-red">
                     <div class="icon"><i class="entypo-mic"></i></div>
-                    <div class="num" data-start="0" data-end="<?phpecho $this->db->count_all('audio');?>" 
+                    <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('audio');?>" 
                             data-postfix="" data-duration="500" data-delay="0"><?php echo $this->db->count_all('audio');?></div>
                         
                     <h3>Audio</h3>
