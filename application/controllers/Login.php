@@ -29,9 +29,7 @@ $this->load->library('encryption');
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
             
             }
-        if ($this->session->userdata('customer_login') == 1)
-            redirect(base_url() . '', 'refresh');
-
+        
 
         $this->load->view('backend/login');
     }
@@ -43,10 +41,7 @@ $this->load->library('encryption');
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
             
             }
-        if ($this->session->userdata('customer_login') == 1)
-            redirect(base_url() . '', 'refresh');
-
-
+   
         $this->load->view('backend/login_otp');
     }
 
@@ -58,9 +53,7 @@ $this->load->library('encryption');
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
             
             }
-        if ($this->session->userdata('customer_login') == 1)
-            redirect(base_url() . '', 'refresh');
-
+       
           $data['mobile'] = $mobile;
         $this->load->view('backend/verify_otp',$data);
     }
@@ -73,7 +66,7 @@ $this->load->library('encryption');
       //var_dump($mobile);die;
       if($real_otp == $otp)
       {
-          $credential    =   array(  'otp' => $otp);
+          $credential    =   array(  'mobile' => $mobile);
         $query = $this->db->get_where('admin' , $credential);
         if ($query->num_rows() > 0) {
             $row = $query->row();
