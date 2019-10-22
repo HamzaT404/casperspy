@@ -87,7 +87,7 @@ $this->load->library('encryption');
     else
     {
         $this->session->set_flashdata('error_message' , 'Invalid OTP');
-      redirect(base_url() .'?login/verify_otp', 'refresh');
+      redirect(base_url() .'?login/verify_otp/'.$mobile, 'refresh');
     }
 
   }
