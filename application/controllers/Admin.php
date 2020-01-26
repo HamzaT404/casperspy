@@ -42,6 +42,24 @@ class Admin extends CI_Controller
         $page_data['page_title'] = get_phrase('admin_dashboard');
         $this->load->view('backend/index', $page_data);
     }
+    function insert_contact()
+    {
+       
+        $data['firstname']= $_POST['name'];
+        $data['mobile']=$_POST['phonenumber'];
+//var_dump($data);die;
+       $result=$this->db->insert('contacts',$data);
+
+       if ($result) {
+           echo 'data added successfully';
+       }
+       else
+       {
+        echo 'error';
+       }
+        
+
+    }
 
 
     function sms($param1='',$param2='',$param3='')
